@@ -18,8 +18,7 @@ import { signUp, useSession } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { USER_CHECK } from "@/lib/actions/authentications_logic";
-import { auth } from "@/lib/auth";
+
 
 export default function SignUp() {
 const router = useRouter();
@@ -63,14 +62,14 @@ async function verify() {
 	};
 
 	return (
-		<Card className="z-50 rounded-lg border-2 border-black/10   max-w-md">
-			<CardHeader>
+        <Card className="z-50 rounded-lg border-2 border-black/10   max-w-md">
+            <CardHeader>
 				<CardTitle className="text-lg md:text-xl">Sign Up</CardTitle>
 				<CardDescription className="text-xs md:text-sm">
 					Enter your information to create an account
 				</CardDescription>
 			</CardHeader>
-			<CardContent>
+            <CardContent>
 				<div className="grid gap-4">
 					<div className="grid grid-cols-2 gap-4">
 						<div className="grid gap-2">
@@ -139,11 +138,13 @@ async function verify() {
 							{imagePreview && (
 								<div className="relative w-16 h-16 rounded-sm overflow-hidden">
 									<Image
-										src={imagePreview}
-										alt="Profile preview"
-										layout="fill"
-										objectFit="cover"
-									/>
+                                        src={imagePreview}
+                                        alt="Profile preview"
+                                        fill
+                                        sizes="100vw"
+                                        style={{
+                                            objectFit: "cover"
+                                        }} />
 								</div>
 							)}
 							<div className="flex items-center gap-2 w-full">
@@ -202,15 +203,15 @@ async function verify() {
 					</Button>
 				</div>
 			</CardContent>
-			<CardFooter>
+            <CardFooter>
 				<div className="flex justify-center w-full border-t py-4">
 					<p className="text-center text-xs text-neutral-500">
 						already have account <Link  href={'/auth/signin'} className="text-orange-400 hover:text-orange-700">sign in </Link>
 					</p>
 				</div>
 			</CardFooter>
-		</Card>
-	);
+        </Card>
+    );
 }
 
 async function convertImageToBase64(file: File): Promise<string> {

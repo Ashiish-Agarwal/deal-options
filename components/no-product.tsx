@@ -9,7 +9,7 @@ const NoProduct = () => {
         <h1 className='text-2xl font-bold uppercase '>you have no products yet</h1>
         <p className='text-md text-zinc-500 '>click the button below to add your first product</p>
         <Link  className={buttonVariants({
-            variant:"default"
+            variant:"teal"
             
         })}  href="/dashboard/product/new">Add Product <Plus/></Link>
     </div>

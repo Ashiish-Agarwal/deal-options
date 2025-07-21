@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 import {
     NavigationMenu,
@@ -13,7 +13,7 @@ import {
     NavigationMenuViewport,
   } from "@/components/ui/navigation-menu"
   
-import { ArrowBigDownIcon, ArrowDown, Menu, X } from 'lucide-react'
+import { Menu } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { buttonVariants } from '@/components/ui/button'
 import {
@@ -21,16 +21,26 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import Top_Baar from '@/components/top-baar'
 
 
 const Navbaar = () => {
+
+
+  const [isVisible, setIsVisible] = useState(true); // State to control visibility
+  
+
+
+
+
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const nav_Links=[
         
+        
         {
             id:1,
-            title:'blog',
-            href:'/blog'
+            title:'Home',
+            href:'/'
         },
         {
             id:2,
@@ -42,72 +52,49 @@ const Navbaar = () => {
             title:'signup',
             href:'/auth/signup'
         },
-    ]
-
-
-    const nav_hover=[
+        
         {
-            id:1,
-            title:'solution',
-            href:'/youtube.com',
-            hover:'video guides',
-
+            id:4,
+            title:'Story',
+            href:'/landingpage/story'
         },
         {
-            id:2,
-            title:'features',
-            href:'/youtube.com',
-            hover:'video guides',
-        }
+            id:5,
+            title:'Contact Support',
+            href:'/contact'
+        },
+        
     ]
+
+
+    
   return (
-    <header className='border-b-2 w-full h-full  border-zinc-700/20 rounded-lg'>
-      <nav className='w-full h-20  gap-2 p-2 flex justify-between items-center '>
-        <Link className='text-2xl tracking-tighter font-serif   ' href={'/'}>
-         Deal-option
+    <>
+
+    <header className={`
+       fixed top-0 left-0 w-full z-50
+      bg-white shadow-md flex justify-between items-center flex-col
+      transform transition-transform duration-300 ease-in-out
+      ${isVisible ? 'translate-y-0' : '-translate-y-full'}
+      `}>
+        <Top_Baar/>
+        
+
+        
+      <nav className='w-full h-16  gap-2 p-2 flex justify-between items-center '>
+        <Link className='text-2xl tracking-tighter font-serif  hover:text-zinc-700  ' href={'/'}>
+         Deal-option <span className='text-teal-500 text-3xl'>
+          .
+          </span>
         </Link>
         <div className='hidden md:flex   '>
 
             
 
-       <div className='flex'>
-
-           {
-             nav_hover.map((link)=>(
-
-
-                <NavigationMenu key={link.id}>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger className='text-xl '>{link.title}</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <NavigationMenuLink className='text-sm  '>
-                        {link.hover}
-                      </NavigationMenuLink>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-
-            ))
-          } 
-          </div>
-          <div className='flex '>
-
-           {
-             nav_Links.map((link)=>(
-
-                <Link className={cn(buttonVariants({
-                    variant:'link',
-                    className:'text-xl'
-                }))} key={link.id} href={link.href}>
-                {link.title}
-                </Link>
-                
-                
-              ))
-            }  
-            </div>
+       
+           
+          </div> 
+         
             
             
 
@@ -117,35 +104,20 @@ const Navbaar = () => {
 
 
 
-</div>
 
-        <div className='md:hidden flex items-center text-center'>
+        <div className=' flex items-center text-center'>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Menu className='h-6 w-6 cursor-pointer' />
             </SheetTrigger>
             <SheetContent side='right'>
-              <div className='flex flex-col gap-4 pt-8 items-center justify-center'>
-                {nav_hover.map((link) => (
-                  <NavigationMenu key={link.id}>
-                    <NavigationMenuList>
-                      <NavigationMenuItem>
-                        <NavigationMenuTrigger className='text-xl '>{link.title}</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <NavigationMenuLink className='text-sm  '>
-                            {link.hover}
-                          </NavigationMenuLink>
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                    </NavigationMenuList>
-                  </NavigationMenu>
-                ))}
+              <div className='flex flex-col gap-4 pt-8 items-center justify-center '>
+                
                 {nav_Links.map((link) => (
-                  <Link
-                    className={cn(buttonVariants({
-                      variant: 'link',
-                      className: 'text-xl'
-                    }))}
+                  <Link  
+                   
+                      className='text-xl font-semibold w-fit h-10 text-center link link-underline link-underline-black'
+                    
                     key={link.id}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
@@ -159,7 +131,15 @@ const Navbaar = () => {
         </div>
       </nav>
     </header>
+      
+        </>
   )
 }
 
 export default Navbaar
+
+
+
+
+
+	

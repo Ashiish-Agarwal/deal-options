@@ -29,6 +29,7 @@ export default function RootLayout({
       >
         {children}
       </body>
+      {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.js" integrity="sha512-vfE8OCUETP038fi2pHsLeJC/5xd48FyLsATJLulbdsCRBXgRWxA+0K9he4GClcPjT24vMJk1mFMFbjYS9J7NpA==" crossOrigin="anonymous"  referrerPolicy="no-referrer"></script> */}
     </html>
   );
 }

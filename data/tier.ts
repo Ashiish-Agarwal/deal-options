@@ -1,5 +1,5 @@
 
-
+export type PaidTierOptions = Exclude<TierNames,'Free'>
 export type TierNames = keyof typeof subscriptionTiers
 
 

@@ -1,10 +1,10 @@
 //its my drizzle schema 
 
-import { subscriptionTiers, TierNames } from "@/data/tier"
 import { relations } from "drizzle-orm"
 import {
   boolean,
   index,
+  integer,
   pgEnum,
   pgTable,
   primaryKey,
@@ -175,13 +175,17 @@ export const countryGroupDiscountRelations = relations(
 
 
 
- export const TierEnum = pgEnum("tiers", ["Free", "Basic", "Pro"])
+ export const TierEnum = pgEnum("tiers", ['Free', 'Basic', 'Standard', 'Premium'])
 
 export const UserSubscriptionTable = pgTable(
   "user_subscriptions",
   {
     id: uuid("id").primaryKey().defaultRandom(),
-    clerkUserId: text("clerk_user_id").notNull().unique(),
+    clerkUserId: text("clerk_user_id").unique(),
+    customerid: text("customer_id").unique(),
+    totalAmount: integer("total_amount").notNull().default(0),
+    billingName: text('billing_name'),
+
     stripeSubscriptionItemId: text("stripe_subscription_item_id"),
     stripeSubscriptionId: text("stripe_subscription_id"),
     stripeCustomerId: text("stripe_customer_id"),

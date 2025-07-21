@@ -7,10 +7,11 @@ import { buttonVariants } from "../ui/button";
 
 type server_button_props={
     children?:string,
+    classname?:string
     
 }
 
-const Server_button = ({children}:server_button_props) => {
+const Server_button = ({children,classname}:server_button_props) => {
 const {pending} = useFormStatus()
 
   return (
@@ -18,9 +19,9 @@ const {pending} = useFormStatus()
       <button
         type="submit"
         className={cn(buttonVariants({
-         className:'w-25 h-9 rounded-md'
+         className:'w-25 h-9 rounded-md',
          
-        }))}
+        }),classname)}
       >
        
 

@@ -5,4 +5,4 @@ const page = () => {
   return <PricingPage/>
 }
 
-export default page
+export default page 

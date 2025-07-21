@@ -1,20 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Funnel+Display:wght@300..800&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-
- 
 @theme inline {
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
- 
+
   @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
     }
   }
 }
-
-
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,4 +124,67 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
+.h5{
+  color: red;
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+
+
+
+
+.googleFont {
+  font-family: "Funnel Display", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+
+.dosisFont {
+  font-family: "Dosis", sans-serif;
+  font-optical-sizing: auto;
+
+  font-style: normal;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+body{
+  background-color: rgb(246, 241, 241);
+}
+
+
+.link-underline {
+  border-bottom-width: 0;
+  background-image: linear-gradient(transparent, transparent), linear-gradient(#fff, #fff);
+  background-size: 0 3px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size .5s ease-in-out;
+}
+
+.link-underline-black {
+  background-image: linear-gradient(transparent, transparent), linear-gradient(rgb(75, 73, 73), rgb(84, 88, 88))
+}
+
+.link-underline:hover {
+  background-size: 100% 3px;
+  background-position: 0 100%
+}

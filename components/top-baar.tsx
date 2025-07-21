@@ -4,7 +4,7 @@ import { MoveUpRight } from 'lucide-react'
 
 const Top_Baar = () => {
   return (
-    <header className='w-full h-18 bg-zinc-900 overflow-hidden text-white font-sans text-center flex items-center justify-center gap-5  '>
+    <header className='w-full h-10 bg-zinc-900 overflow-hidden text-white font-sans text-center flex items-center justify-center gap-5  '>
        
         grow your subscription and grow your business
 
