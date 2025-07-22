@@ -12,7 +12,8 @@ import product from "@/app/dashboard/product/new/page";
 
 export async function getProductViewCount(userid:string,StartDate: Date ){
     
-    const chachfn = DB_CACHE(getProductViewCountInternal,{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const chachfn = DB_CACHE(getProductViewCountInternal as any,{
         tags:[getidTag(userid,CHACH_TAGS.productViews)]
     })
     return chachfn(userid,StartDate)

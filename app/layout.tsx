@@ -13,8 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "kevin ",
-  description: "change ",
+  title: "deal-options ",
+  description: " no touch code , its help for those website wants to easy and less cost optimize their product pricing for global market ",
+  keywords:'deal-options make more easier to impliment global pricing discount card at low cost and cleaner ui its helps a lot of bussiness owner without touch the code ',
+  publisher :'dornygrp'
 };
 
 export default function RootLayout({
@@ -29,7 +31,6 @@ export default function RootLayout({
       >
         {children}
       </body>
-      {/* <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.js" integrity="sha512-vfE8OCUETP038fi2pHsLeJC/5xd48FyLsATJLulbdsCRBXgRWxA+0K9he4GClcPjT24vMJk1mFMFbjYS9J7NpA==" crossOrigin="anonymous"  referrerPolicy="no-referrer"></script> */}
     </html>
   );
 }

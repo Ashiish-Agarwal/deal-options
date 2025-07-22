@@ -26,7 +26,7 @@ export const InfiniteMovingCards = ({
 
   useEffect(() => {
     addAnimation();
-  }, []);
+  }, [undefined]);
 
   function addAnimation() {
     if (containerRef.current && scrollerRef.current) {

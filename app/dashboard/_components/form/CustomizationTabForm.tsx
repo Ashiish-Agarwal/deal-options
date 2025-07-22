@@ -46,8 +46,6 @@ import Upgrade from "@/components/Upgrade"
     }
 }) =>{
 
-
-
     const form = useForm<z.infer<typeof CustomizationTabFormSchema>>({
         resolver: zodResolver(CustomizationTabFormSchema),
         defaultValues: {
@@ -56,6 +54,11 @@ import Upgrade from "@/components/Upgrade"
          
         },
       })
+
+const re= removeBranding
+if(!re){
+  return null
+}
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof CustomizationTabFormSchema>) {
    const data = await updateProductCustmizaion({id:customizationtable.productId},values)
@@ -79,7 +82,7 @@ import Upgrade from "@/components/Upgrade"
     <p className="text-sm text-muted-foreground mt-5 cursor-no-drop">See how your banner look like </p>
     <div>
       {canCustomizeBanner ? null : (
-        <Upgrade children="you do not have permission to perform this action"/>
+        <Upgrade>you do not have permission to perform this action</Upgrade>
       )}
     </div>
     <div className=" mt-5 ">

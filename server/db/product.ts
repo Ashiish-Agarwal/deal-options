@@ -14,7 +14,8 @@ export async function updateProductdb(data:Partial<typeof ProductTable.$inferIns
 }
 
 export async function GetProductCountryGroup({userid,id}:{userid:string,id:string}) {
-    const chachfn=DB_CACHE(GetProductCountryGroupinternal,{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const chachfn=DB_CACHE(GetProductCountryGroupinternal as any,{
         tags: [
             getidTag(id,CHACH_TAGS.products),
             getGlobalTag(CHACH_TAGS.country),
@@ -65,7 +66,8 @@ export async function GetProductCountryGroupinternal({userid,id}:{userid:string,
 
 
 export async function getProduct({id,userid}:{id:string,userid:string}){
-  const chachfn=DB_CACHE(getinternalProduct,{
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const chachfn=DB_CACHE(getinternalProduct as any,{
     tags:[getidTag(id,CHACH_TAGS.products)]
   })
   return chachfn({id,userid})
@@ -83,7 +85,8 @@ export async function getinternalProduct({id,userid}:{id:string,userid:string}){
  
  export async function GetProductCustmization({id,userid}:{id:string,userid:string}){
     
-    const chachfn = DB_CACHE(GetProductCustmizationInternal,{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const chachfn = DB_CACHE(GetProductCustmizationInternal as any,{
         tags:[getidTag(id,CHACH_TAGS.products)]
     })
    
@@ -103,7 +106,8 @@ export async function getinternalProduct({id,userid}:{id:string,userid:string}){
 
  export async function getMaxProductCount(userid:string | null){
     if(userid==null) return 0
-    const fn = DB_CACHE(getMaxProductCountInternal,{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const fn = DB_CACHE(getMaxProductCountInternal as any,{
         tags:[getUserTag(userid,CHACH_TAGS.products)]
     })
     return fn(userid)

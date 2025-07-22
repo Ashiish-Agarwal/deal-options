@@ -14,7 +14,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import Image from "next/image";
 import { Loader2, X } from "lucide-react";
-import { signUp, useSession } from "@/lib/auth-client";
+import { signUp } from "@/lib/auth-client";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -23,17 +23,17 @@ import Link from "next/link";
 export default function SignUp() {
 const router = useRouter();
 
-async function verify() {
-	try {
-	  const user = await useSession();
-	  if (user) {
-		router.push('/dashboard');
-	  }
-	} catch (error) {
-	  console.error('Session verification failed:', error);
-	  // Handle the error appropriately
-	}
-  }
+// async function verify() {
+// 	try {
+// 	  const user = await useSession();
+// 	  if (user) {
+// 		router.push('/dashboard');
+// 	  }
+// 	} catch (error) {
+// 	  console.error('Session verification failed:', error);
+// 	  // Handle the error appropriately
+// 	}
+//   }
 
 
  

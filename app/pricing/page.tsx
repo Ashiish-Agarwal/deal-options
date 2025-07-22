@@ -38,7 +38,7 @@ if(!uuid || uuid.length===0){
 
 </CardTitle>
 <CardDescription className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
-          Choose the plan that's right for you. Get started for free, or upgrade for more features and capacity.
+          Choose the plan that &lsquo; s right for you. Get started for free or upgrade for more features and capacity.
         </CardDescription>
 </CardHeader>
     <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-5 w-full h-full'>

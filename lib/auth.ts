@@ -2,14 +2,12 @@ import db from '@/db';
 import { user ,account,session,verification} from '@/src/db/schema';
 import {
     betterAuth,
-    string,
-    User
+    
 } from 'better-auth';
 import {
     drizzleAdapter
 } from 'better-auth/adapters/drizzle';
 import { nextCookies } from 'better-auth/next-js';
-import { createAuthMiddleware } from 'better-auth/api'; // Required for hooks
 import { UserSubscriptionTable } from '@/src/db/product';
 
 

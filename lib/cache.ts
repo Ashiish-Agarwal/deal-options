@@ -1,4 +1,3 @@
-//chache file
 import {revalidateTag, unstable_cache} from "next/cache"
 import { cache } from "react"
 
@@ -31,12 +30,17 @@ export function clearfulchache(){
     revalidateTag('*')
 }
 
-export function DB_CACHE<T extends (...args: any[]) => Promise<any>>(cb: Parameters<typeof unstable_cache<T>>[0],{tags}:{tags:ValidTags[]}){
-   return  cache(unstable_cache<T>(cb ,undefined,{tags:[...tags,'*']}))
-    
+// Define a generic type for async functions
+type AsyncFunction<TArgs extends readonly unknown[] = readonly unknown[], TReturn = unknown> = (...args: TArgs) => Promise<TReturn>
+
+export function DB_CACHE<T extends AsyncFunction>(
+    cb: T,
+    {tags}: {tags: ValidTags[]}
+): T {
+   return cache(unstable_cache(cb, undefined, {tags: [...tags, '*']})) as T
 }
 
-export function revalidate_db_chache({tags,userid,id}:{tags:keyof typeof CHACH_TAGS,userid?:string,id:string}){
+export function revalidate_db_chache({tags,userid,id}:{tags:keyof typeof CHACH_TAGS,userid?:string,id?:string}){
 
     revalidateTag(getGlobalTag(tags))
 if(userid != null){

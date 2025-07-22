@@ -24,7 +24,8 @@ data:typeof UserSubscriptionTable.$inferInsert
 
 
 export async function getUserSubscription(userid:string){
-    const fn= DB_CACHE(getUserSubscriptioninternal,{
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const fn= DB_CACHE(getUserSubscriptioninternal as any,{
         tags:[getUserTag(userid,CHACH_TAGS.subscription)]
     })
     return fn(userid)

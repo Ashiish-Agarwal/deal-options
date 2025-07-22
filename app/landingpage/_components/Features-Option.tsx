@@ -1,5 +1,4 @@
-import { Code, Icon, MoveLeft } from "lucide-react";
-import Image from "next/image";
+
 import React from 'react';
 
 const FeaturesOption = () => {
@@ -33,7 +32,7 @@ const FeaturesOption = () => {
 
     <div className="text-xl font-semibold tracking-tight text-balance text-center ">
     <h1 className='text-teal-500 text-5xl '> Our moto</h1>
-<p className='text-balance dosisFont text-2xl mt-5 text-center'>Turn browsers into buyers—anywhere. Reach the 85% you're missing with intelligent global pricing    </p>
+<p className='text-balance dosisFont text-2xl mt-5 text-center'>Turn browsers into buyers—anywhere. Reach the 85% you&apos;re missing with intelligent global pricing    </p>
 
 <div className="w-full max-w-6xl mx-auto px-4 py-20">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">

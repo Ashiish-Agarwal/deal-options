@@ -28,7 +28,7 @@ const ProductsDetailForm = ({product}:{
   }
 }) => {
 
-  const notify = () => toast('Here is your toast.');
+  // const notify = () => toast('Here is your toast.');
    
  // 1. Define your form.
  const form = useForm<z.infer<typeof ProductDetailSchema>>({

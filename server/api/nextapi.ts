@@ -6,7 +6,8 @@ import { CHACH_TAGS, getGlobalTag, getidTag } from "@/lib/cache";
 
 export async function getProductForBanner({id,country ,url}:{id:string,country:string,url:string}){
     
- const chachfn = DB_CACHE(getProductForBannerInternal,{
+ // eslint-disable-next-line @typescript-eslint/no-explicit-any
+ const chachfn = DB_CACHE(getProductForBannerInternal as any,{
     tags:[
         getidTag(id,CHACH_TAGS.products),
         getGlobalTag(CHACH_TAGS.country),

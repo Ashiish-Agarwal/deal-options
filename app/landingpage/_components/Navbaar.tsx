@@ -1,17 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { ReactNode, useEffect, useState } from 'react'
+import {  useState } from 'react'
 
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuViewport,
-  } from "@/components/ui/navigation-menu"
   
 import { Menu } from 'lucide-react'
 import { cn } from '@/lib/utils'
@@ -27,7 +17,7 @@ import Top_Baar from '@/components/top-baar'
 const Navbaar = () => {
 
 
-  const [isVisible, setIsVisible] = useState(true); // State to control visibility
+  const [isVisible] = useState(true); // State to control visibility
   
 
 
@@ -105,7 +95,11 @@ const Navbaar = () => {
 
 
 
-        <div className=' flex items-center text-center'>
+        <div className=' flex items-center text-center gap-10 '>
+         <Link className={cn(buttonVariants({
+          variant:'outline',
+          className:'w-24 text-lg rounded-md border-2 border-teal-500'
+        }))} href={'/landingpage/story'}>story</Link>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Menu className='h-6 w-6 cursor-pointer' />

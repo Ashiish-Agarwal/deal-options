@@ -29,12 +29,12 @@ const InnerNavbaar = () => {
     
       <div className='flex gap-5 mr-5 dosisFont  items-center'>
       <div
-        className='relative group' // Add 'relative' to the container and 'group' for Tailwind's group-hover
+        className='relative group' 
         
       >
         <img
           src={session?.data?.user.image as string || '/defaultpf.png'}
-          alt="User Avatar" // More descriptive alt text
+          alt="User Avatar" 
           className='w-10 h-10 rounded-full hover:cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out shadow-xl hover:shadow-2xl'
         />
 

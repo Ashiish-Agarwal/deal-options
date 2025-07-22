@@ -10,8 +10,6 @@ import { UserSubscriptionTable } from "@/src/db/product";
 
 import { user } from "@/src/db/schema";
 import { eq } from "drizzle-orm";
-import { auth } from "./auth";
-import { headers } from "next/headers";
 
 interface ProductCreatedProps{
     
@@ -32,9 +30,9 @@ export async function checkoutProductCreated({ tier,customerid,subscriptionid,su
  
      
     
-    const session = await auth.api.getSession({
-        headers: await headers() // or request.headers in API routes
-    })
+    // const session = await auth.api.getSession({
+    //     headers: await headers() // or request.headers in API routes
+    // })
     
 
     
@@ -93,9 +91,9 @@ export async function ActiveTier({ tier,customerid,subscriptionitemid ,customer_
  
      
     
-    const session = await auth.api.getSession({
-        headers: await headers() // or request.headers in API routes
-    })
+    // const session = await auth.api.getSession({
+    //     headers: await headers() // or request.headers in API routes
+    // })
     
 
     

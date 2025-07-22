@@ -1,8 +1,8 @@
 "use client";
 import { TextRoll } from '@/components/motion-primitives/text-roll';
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
-import { Star, StarIcon } from 'lucide-react';
+import { StarIcon } from 'lucide-react';
 
 export function Testimonial() {
   return (

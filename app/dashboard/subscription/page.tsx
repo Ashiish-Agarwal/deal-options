@@ -25,11 +25,11 @@ const page = async () => {
     }
     const tier =  await getUserSubscriptionTier(userid)
   
-    const productCount = await getMaxProductCount(userid)
+    const productCount = await getMaxProductCount(userid) as number
     const PricingViewCount = await  getProductViewCount(
         userid,
         startOfMonth(new Date())
-    )
+    ) as number
     
   return (
     <div className='pt-28  p-5 flex flex-col gap-5'>
@@ -86,7 +86,7 @@ const page = async () => {
 }
 
 export default page
-export function PricingCard({
+function PricingCard({
   name,
   priceInCents,
   maxNumberOfProducts,

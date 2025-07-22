@@ -1,11 +1,11 @@
 
 import { buttonVariants } from '@/components/ui/button'
-import { AlignLeft, ArrowLeftIcon, ArrowRight, ArrowRightIcon, BookCopy, Edit, StarIcon } from 'lucide-react'
+import { ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
-import React from 'react'
-import Trust_Page from './_components/Trust_Page'
+import React, { Suspense   } from 'react'
 
-import { useSession } from '@/lib/auth-client'
+
+
 import { redirect } from 'next/navigation'
 import PricingPage from '@/components/pricing-page'
 
@@ -16,6 +16,7 @@ import { uuidAction } from '@/server/users'
 import FeaturesOption from './_components/Features-Option'
 import VideoComponent from '@/components/VideoComponent'
 import { Testimonial } from './_components/testimonial'
+import SkeletonCard from '../loading'
 
 
 
@@ -30,10 +31,13 @@ const page = async () => {
     }
 
   return (
-    <div className='  cursor-crosshair p-2 '>
-      <section className="min-h-screen font  container flex items-center justify-center  text-balance flex-col gap-8 ">
+    <Suspense fallback={<SkeletonCard />}>
+      
 
-        {/* <div className='w-full h-full    border-0  flex sm:flex-row flex-col gap-8  '> */}
+    <div className='   p-2 '>
+      <section className="min-h-screen font no-scrollbar   container flex items-center justify-center  text-balance flex-col gap-8 ">
+
+        
         <div className='w-full h-full   border-0 grid sm:grid-cols-2 grid-cols-1 mt-20 '>
 
           <div className='w-full  h-full ml-10 p-2 '>
@@ -42,18 +46,7 @@ const page = async () => {
 
             <h1 className='text-lg lowercase font-semibold tracking-tight text-balance mt-10 googleFont'>Make Profit 🔥</h1>
             </div>
-             {/* <h1 className='text-5xl text-balance mt-3 tracking-widest font-semibold    '>
-              <span className='text-teal-500 font-bold   '>
-                Deal
-                </span>
-               options make <br /> more <span className='text-teal-500  font-bold   '>
-               Easier
-              </span>
-                  for  <br />your 
-                  Products
-                  <span className='text-teal-500 font-bold  '> Profit</span>
-                  
-                  </h1>  */}
+            
                   <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-balance mt-3 tracking-wide sm:tracking-wider md:tracking-widest font-semibold leading-tight sm:leading-snug md:leading-normal px-4 sm:px-0'>
   <span className='text-teal-500 dosisFont'>
     Deal
@@ -202,6 +195,7 @@ const page = async () => {
       </div>
       </section>
     </div>
+              </Suspense>
   );
 }
 

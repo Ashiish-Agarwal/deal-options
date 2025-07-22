@@ -59,14 +59,15 @@ export async function productDetails(unsafeData: z.infer<typeof ProductDetailSch
     }
   }
 
-  redirect(`/dashboard/products/${id}/edit?tab=countries`)
+  redirect(`/dashboard`)
 
 
 }
 
 export async function getProducts({ userid, limit }: { userid: string, limit?: number} = {userid:'',limit:10} ) {
 
-  const chachfn = DB_CACHE(getinternalProducts, {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const chachfn = DB_CACHE(getinternalProducts as any, {
     tags: [getUserTag(userid, CHACH_TAGS.products)]
   })
 

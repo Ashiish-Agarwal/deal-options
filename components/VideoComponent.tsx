@@ -6,13 +6,13 @@ const VideoComponent = () => {
 
     <div className=' bg-white/50 border-zinc-900/10 border-2 backdrop-blur-none p-3 rounded-md '>
 
-    <video  className='w-full h-full rounded-md border-2 border-zinc-500' width="540" height="590" controls preload="none"  autoPlay muted>
-    <source src="/video.mp4" type="video/mp4"  />
+ 
+
+    <iframe allowTransparency  width="1200" height="600" src="https://www.youtube.com/embed/RB8_aFLXJmw?si=g8olqshjBl2-uBw5" title="YouTube video player" frameBorder="0" allow=" autoplay; accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
     
      
-   
-    Your browser does not support the video tag.
-  </video>
+ 
+
        
     </div>
     </div>

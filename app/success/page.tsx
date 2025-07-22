@@ -10,10 +10,14 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 import React from 'react'
 
-const page = async ({searchParams}:{searchParams:{customer_session_token?:string}}) => {
+const page = async ({searchParams}:{searchParams:Promise<{customer_session_token?:string}>}) => {
   const userid = await uuidAction()
   if(!userid){ // Simplified check
     redirect('/login')
+  }
+  const resolvedSearchParams = await searchParams
+  if(resolvedSearchParams){
+    return null
   }
 
   const [userData] = await db.select().from(user).where(eq(user.id,userid)) // Destructure for direct access

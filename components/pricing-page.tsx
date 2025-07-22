@@ -2,22 +2,18 @@
 
 
 import React from 'react';
-import { subscriptionTiersInOrder, TierNames } from '@/data/tier'; // Adjust path as needed
+import { subscriptionTiersInOrder } from '@/data/tier'; // Adjust path as needed
 import { CheckIcon } from '@heroicons/react/24/outline'; // Install @heroicons/react if you haven't
 import Link from 'next/link';
-import { uuidAction } from '@/server/users';
-import { redirect } from 'next/navigation';
 
 
 
 
 
-interface PricingPageProps {
- 
-  onSubscribeClick?: (tierName: TierNames) => void;
-}
 
-const PricingPage: React.FC<PricingPageProps> = ({ onSubscribeClick }) => {
+
+
+const PricingPage = () => {
 
 
 
@@ -32,7 +28,7 @@ const PricingPage: React.FC<PricingPageProps> = ({ onSubscribeClick }) => {
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600">
-          Choose the plan that's right for you. Get started for free, or upgrade for more features and capacity.
+          Choose the plan that&apos;s right for you. Get started for free, or upgrade for more features and capacity.
         </p>
 
         <div className="isolate mx-auto mt-16 grid max-w-md grid-cols-1 gap-y-8 sm:mt-20 lg:max-w-4xl lg:grid-cols-2 xl:max-w-none xl:grid-cols-4">

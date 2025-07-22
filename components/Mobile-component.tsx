@@ -1,7 +1,7 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Button } from '@/components/ui/button'
-import { AlignLeft, ArrowBigLeft, Home, Menu, MoveRight, ShoppingCart, Search, Heart } from 'lucide-react'
+import { Home, Menu, ShoppingCart, Heart, MoveRight, Search } from 'lucide-react'
 import Image from 'next/image';
 
 interface Product {
@@ -193,7 +193,7 @@ const MobileCMP: React.FC = () => {
                 
                 {/* Promotion Banner */}
                 <div className='w-full h-8 bg-gradient-to-r bg-black text-white flex items-center justify-center text-xs font-medium'>
-                    <p className='animate-pulse'>🎉 Americans use 'AMERICANS' get 20% off!</p>
+                    <p className='animate-pulse'>🎉 Americans use &apos;AMERICANS&apos; get 20% off!</p>
                 </div>
                 
                 {/* Header */}

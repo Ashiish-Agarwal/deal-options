@@ -11,7 +11,9 @@ function getClientIP(request: NextRequest): string | null {
   if (realIP) return realIP
   if (forwarded) return forwarded.split(',')[0].trim()
   
-  return request.ip || null
+  // NextRequest doesn't have direct .ip property in Edge runtime
+  // This would need to be handled differently in production
+  return null
 }
 
 // Method 1: Using ipapi.co (free tier: 30,000 requests/month)

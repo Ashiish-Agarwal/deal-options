@@ -23,7 +23,13 @@ const page =async ({params,searchParams}:
      redirect('/login')
   }
  
-  const productdata = await getProduct({userid:userid,id:id})
+  const productdata = await getProduct({userid:userid,id:id}) as {
+    id: string;
+    name: string;
+    description: string | null;
+    url: string;
+  } | null
+  
   if(productdata==null){
    return notFound()
   }
@@ -52,7 +58,7 @@ const page =async ({params,searchParams}:
 
 export default page
 
-export function DetailsTab({product}:{
+function DetailsTab({product}:{
   product:{
     id:string,
     name:string,
@@ -74,9 +80,10 @@ return (
 
 }
 
-export async function CountryTab ({id,userid}:{id:string,userid:string}){
+async function CountryTab ({id,userid}:{id:string,userid:string}){
 
-   const countrygroups= await GetProductCountryGroup({userid,id})
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   const countrygroups= await GetProductCountryGroup({userid,id}) as any[]
   
 
 
@@ -85,8 +92,8 @@ return(
     <Card className='w-[90%]  bg-accent/55 border-0 border-zinc-950/10  rounded-xl   h-full  '>
 
       <CardHeader>
-        <CardTitle className='text-xl '> Countries discount</CardTitle>
-        <CardDescription> leave the discount field empty if you do not  wants to display deals for any country and all set up  ✨</CardDescription>
+        <CardTitle className='text-xl '>Countries discount</CardTitle>
+        <CardDescription>leave the discount field empty if you do not  wants to display deals for any country and all set up  ✨</CardDescription>
       </CardHeader>
       <CardContent>
        <CountryDiscountForm id={id} countrygroups={countrygroups}/>
@@ -100,11 +107,19 @@ return(
 }
 
 
-export async function CustomizationTab({id,userid}:{id:string,userid:string}){
+async function CustomizationTab({id,userid}:{id:string,userid:string}){
 
-const customizationtable= await GetProductCustmization({id,userid})
+const customizationtable= await GetProductCustmization({id,userid}) as {
+    classPrefix: string | null;
+    productId: string;
+    locationMessage: string;
+    backgroundColor: string;
+    textColor: string;
+    fontSize: string;
+    bannerContainer: string;
+    isSticky: boolean;
+  } | null
 if(customizationtable==null) return notFound()
-  const removeBranding= await canRemoveBranding(userid)
 
 
   return(

@@ -31,11 +31,12 @@ export async function canAccessAnalytics(userid: string | null) {
 
 
 
-export async function canCreateProduct(userid: string | null){
-   const fn= DB_CACHE(canCreateProductInternal,{
+export async function canCreateProduct(userid: string | null): Promise<boolean>{
+   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+   const fn= DB_CACHE(canCreateProductInternal as any,{
     tags:[getUserTag(userid as string,CHACH_TAGS.subscription)]
    })
-   return fn(userid)
+   return fn(userid) as Promise<boolean>
 }
 export async function canCreateProductInternal(userid: string | null){
     

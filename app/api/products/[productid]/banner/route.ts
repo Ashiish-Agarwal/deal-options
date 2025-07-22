@@ -6,8 +6,7 @@ import { getProductForBanner } from "@/server/api/nextapi";
 import { createProductView } from "@/server/actions/productDetails";
 import { canRemoveBranding, canShowDsicountBanner } from "@/server/permission"; 
 import { createElement } from "react";
-import { Banner } from "@/components/Banner";
-import { string } from "better-auth";
+
 
 
 export async function GET(
@@ -43,12 +42,36 @@ const {productid} = await params
     }
 
     console.log('Fetching product data', { productid, country, requestingURL });
-    const { ProductData, countrydata, discount } = await getProductForBanner({
+    const bannerData = await getProductForBanner({
       id: productid,
       country,
       url: requestingURL ?? '',
-    });
-
+    }) as {
+      ProductData?: {
+        id: string;
+        clerkUserId: string;
+        custmization: {
+          locationMessage: string;
+          bannerContainer: string;
+          backgroundColor: string;
+          textColor: string;
+          fontSize: string;
+          isSticky: boolean;
+          classPrefix?: string | null;
+        };
+      };
+      countrydata?: {
+        id: string;
+        name: string;
+        code: string;
+      };
+      discount?: {
+        coupon: string;
+        percentage: number;
+      };
+    };
+    
+    const { ProductData, countrydata, discount } = bannerData;
     console.log('Product data received', { ProductData, countrydata, discount });
 
     if (!ProductData) {

@@ -1,9 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { polar } from "@/server/polar"
 import { notFound } from "next/navigation"
-import {subscriptionTiersInOrder, TierNames ,PaidTierOptions ,subscriptionTiers} from '@/data/tier'
+import {subscriptionTiers} from '@/data/tier'
 import { CheckIcon } from "lucide-react"
-import { Button, buttonVariants } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
 
 interface paramsProps{
