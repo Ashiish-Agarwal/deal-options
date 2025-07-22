@@ -46,7 +46,7 @@ if(!uuid){
       throw error
     }
   }
-  // await AssignTierfree(userID[0].id)
+ 
 
   
 

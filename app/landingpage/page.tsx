@@ -174,7 +174,7 @@ const page = async () => {
           <h1 className=' text-4xl '>Results in All Business-Critical Areas</h1>
 <p className='text-balance dosisFont text-2xl mt-5 text-center'> We anylize Lot of Apps got the same issue and our Saas provide solution</p>
 
-   <div className='w-full h-full   flex items-center justify-center flex-col'>
+   <div className='w-full h-full    flex items-center justify-center flex-col '>
 
     <VideoComponent/>
    <h1 className='text-4xl dosisFont'>thats it 

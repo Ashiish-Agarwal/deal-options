@@ -23,6 +23,7 @@ const layout = ({children}:{children:React.ReactNode}) => {
      
     
       <Toaster richColors={true} position='bottom-center' />
+      
       </div>
     </Suspense>
     </>

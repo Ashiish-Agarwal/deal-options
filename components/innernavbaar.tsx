@@ -2,11 +2,26 @@
 
 import Link from 'next/link'
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
-import { Menu } from 'lucide-react'
-import { useSession } from '@/lib/auth-client'
+import { LogOut, Menu, Settings, User } from 'lucide-react'
+import { authClient, useSession } from '@/lib/auth-client'
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover"
+import { Button } from './ui/button'
+import { redirect } from 'next/navigation'
+import { Separator } from '@radix-ui/react-dropdown-menu'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+
 
 const InnerNavbaar = () => {
   const session = useSession();
+
+  async function handleLogout() {
+    await authClient.signOut();
+    redirect('/');
+  }
 
   const nav_Links = [
     { id: 1, title: 'Products', href: '/dashboard/product' },
@@ -32,11 +47,81 @@ const InnerNavbaar = () => {
         className='relative group' 
         
       >
-        <img
-          src={session?.data?.user.image as string || '/defaultpf.png'}
-          alt="User Avatar" 
-          className='w-10 h-10 rounded-full hover:cursor-pointer hover:scale-110 transition-all duration-300 ease-in-out shadow-xl hover:shadow-2xl'
-        />
+          {/* User Profile Popover */}
+          <Popover>
+              <PopoverTrigger asChild>
+                <Button variant="ghost" className='relative p-1 hover:bg-gray-100 rounded-full'>
+                  <Avatar className='h-9 w-9 ring-2 ring-transparent hover:ring-teal-200 transition-all duration-200'>
+                    <AvatarImage 
+                      src={session?.data?.user.image || '/defaultpf.png'} 
+                      alt="User Avatar" 
+                    />
+                    <AvatarFallback className='bg-gradient-to-br from-teal-400 to-blue-500 text-white font-semibold'>
+                      {(session?.data?.user.name)}
+                    </AvatarFallback>
+                  </Avatar>
+                </Button>
+              </PopoverTrigger>
+              
+              <PopoverContent align='end' className='w-72 p-0 shadow-xl border-0 ring-1 ring-gray-200'>
+                {/* Profile Header */}
+                <div className='bg-gradient-to-br from-teal-50 to-blue-50 p-4 rounded-t-lg'>
+                  <div className='flex items-center gap-3'>
+                    <Avatar className='h-12 w-12 ring-2 ring-white shadow-md'>
+                      <AvatarImage 
+                        src={session?.data?.user.image || '/defaultpf.png'} 
+                        alt="User Avatar" 
+                      />
+                      <AvatarFallback className='bg-gradient-to-br from-teal-400 to-blue-500 text-white font-semibold'>
+                        {(session?.data?.user.name) || 'User'}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div className='flex-1 min-w-0'>
+                      <p className='font-semibold text-gray-900 truncate'>
+                        {session?.data?.user.name || 'User'}
+                      </p>
+                      <p className='text-sm text-gray-600 truncate'>
+                        {session?.data?.user.email}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Menu Items */}
+                <div className='p-2'>
+                  <Button
+                    variant="ghost"
+                    className='w-full justify-start gap-3 h-10 text-left font-normal hover:bg-gray-50 cursor-not-allowed'
+                  >
+                    <User className='h-4 w-4 text-gray-500' />
+                    View Profile
+                  </Button>
+                  
+                  <Button
+                    variant="ghost"
+                    className='w-full justify-start gap-3 h-10 text-left font-normal hover:bg-gray-50 cursor-not-allowed'
+                  >
+                    <Settings className='h-4 w-4 text-gray-500' />
+                    Settings
+                  </Button>
+                  
+                  <Separator className='my-2' />
+                  
+                  <Button
+                    variant="ghost"
+                    onClick={handleLogout}
+                    className='w-full justify-start gap-3 h-10 text-left font-normal hover:bg-red-50 hover:text-red-600 text-red-600'
+                  >
+                    <LogOut className='h-4 w-4' />
+                    Sign out
+                  </Button>
+                </div>
+              </PopoverContent>
+            </Popover>
+
+
+        
+         
 
        
 

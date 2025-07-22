@@ -30,12 +30,14 @@ const Navbaar = () => {
         {
             id:1,
             title:'Home',
-            href:'/'
+            href:'/',
+            
         },
         {
             id:2,
             title:'pricing',
-            href:'/pricing'
+            href:'/pricing',
+            
         },
         {
             id:3,
@@ -98,7 +100,7 @@ const Navbaar = () => {
         <div className=' flex items-center text-center gap-10 '>
          <Link className={cn(buttonVariants({
           variant:'outline',
-          className:'w-24 text-lg rounded-md border-2 border-teal-500'
+          className:'w-24 text-lg rounded-md border-2 border-zinc-500/30'
         }))} href={'/landingpage/story'}>story</Link>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
