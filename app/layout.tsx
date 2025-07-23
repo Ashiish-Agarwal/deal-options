@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -12,12 +12,80 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
+
+
 export const metadata: Metadata = {
-  title: "deal-options ",
+  title: {
+    default: 'Deal Option - Best Deals and Offers',
+    template: '%s | Deal Option'
+  },
   description: " no touch code , its help for those website wants to easy and less cost optimize their product pricing for global market ",
-  keywords:'deal-options make more easier to impliment global pricing discount card at low cost and cleaner ui its helps a lot of bussiness owner without touch the code ',
-  publisher :'dornygrp'
-};
+ 
+  keywords: ['deals', 'offers', 'discounts', 'savings', 'deal option','shopify automation', 'no code', 'free tier', 'paritydeals', 
+    'alternative parity deals'
+  ],
+  authors: [{ name: 'Deal Option' }],
+  creator: 'Deal Option',
+  publisher: 'Dorny Group',
+  metadataBase: new URL('https://deal-option.app.dorny.site'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://deal-option.app.dorny.site',
+    siteName: 'Deal Option',
+    title: 'Deal Option - Best Deals and Offers',
+    description: 'Find the best deals and offers on Deal Option. Save money on your favorite products and services.',
+    images: [
+      {
+        url: '/favicon.ico', // Create this image (1200x630px)
+        width: 1200,
+        height: 630,
+        alt: 'Deal Option',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Deal Option - Best Deals and Offers',
+    description: 'Find the best deals and offers on Deal Option. Save money on your favorite products and services.',
+    images: ['/favicon.ico'],
+    creator: '@dealoption', // Add your Twitter handle
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  }
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default function RootLayout({
   children,
@@ -34,3 +102,7 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+
+

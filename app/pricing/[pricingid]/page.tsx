@@ -5,6 +5,8 @@ import {subscriptionTiers} from '@/data/tier'
 import { CheckIcon } from "lucide-react"
 import { buttonVariants } from "@/components/ui/button"
 import Link from "next/link"
+import { uuidAction } from "@/server/users"
+import { redirect } from "next/navigation"
 
 interface paramsProps{
     params:Promise<{pricingid:string}>
@@ -21,6 +23,10 @@ const page = async ({params}:paramsProps) => {
         return notFound()
     }
     
+    const uuid= await uuidAction()
+    if(!uuid || uuid.length===0){
+      redirect('/auth/signin')
+    }
     
   return (
     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ">

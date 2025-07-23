@@ -6,16 +6,12 @@ import {subscriptionTiers} from '@/data/tier'
 import { CheckIcon } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
-import { uuidAction } from '@/server/users'
-import { redirect } from 'next/navigation'
+
 
 
 const PricingPage = async () => {
 
-  const uuid= await uuidAction()
-if(!uuid || uuid.length===0){
-  redirect('/auth/signin')
-}
+ 
  
 
   try {

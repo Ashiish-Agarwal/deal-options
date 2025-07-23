@@ -59,7 +59,7 @@ if(!uuid){
   }
  
 
-  const productdata = await getProducts({ userid: userID[0].id ,limit:5 }) as any[]
+  const productdata = await getProducts({ userid: userID[0].id ,limit:5 }) 
   if (productdata.length === 0) {
     return <NoProduct />
   }

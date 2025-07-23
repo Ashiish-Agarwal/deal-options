@@ -26,9 +26,9 @@ const page = async () => {
     const session = await  uuidAction()
     
 
-    // if(session) {
-    //     return redirect('/dashboard')
-    // }
+    if(session) {
+        return redirect('/dashboard')
+    }
 
   return (
     <Suspense fallback={<SkeletonCard />}>
