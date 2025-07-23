@@ -44,6 +44,9 @@ export async function canCreateProductInternal(userid: string | null){
 
     const tier = await getUserSubscriptionTier(userid);
     const products= await getMaxProductCount(userid);
+    
+    // In canCreateProductInternal
+console.log(`User ${userid}: Current products: ${products}, Max allowed: ${tier.maxNumberOfProducts}`)
     return products< tier.maxNumberOfProducts
 }
 export async function canShowDsicountBanner(userid:string){

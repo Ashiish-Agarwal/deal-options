@@ -68,7 +68,7 @@ export async function UpdateCountryDiscount({id}:{id:string},unsafeData:z.infer<
 export async function updateProductCustmizaion({id}:{id:string},unsafeData:z.infer<typeof CustomizationTabFormSchema>){
     const userid=  await uuidAction()
     const {success,data} = CustomizationTabFormSchema.safeParse(unsafeData)
-    if(!success || userid==null || !canCreateProduct){
+    if(!success || userid==null){
       return {message:'this was an error savng your group country  ',error:true}
     }
    

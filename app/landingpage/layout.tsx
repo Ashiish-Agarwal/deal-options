@@ -9,7 +9,7 @@ const layout = ({children}:{children:React.ReactNode}) => {
     <div>
 
     </div>
-    <div className='w-full h-full bg-sketch-dots relative '>
+    <div className='w-full h-full bg-sketch-dots '>
       <Top_Baar/>
       <Navbaar/>
       {children}

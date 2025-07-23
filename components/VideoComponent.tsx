@@ -4,7 +4,7 @@ const VideoComponent = () => {
   return (
     <div className='p-2 pb-10'>
 
-    <div className='  bg-white/50 border-zinc-900/10 border-2 w-[450px] h-[350px]   md:w-[80rem] md:h-[40rem]  backdrop-blur-none p-3 rounded-md overflow-hidden'>
+    <div className='  bg-white/50 border-zinc-900/10 border-2 w-[100%] h-[250px]   md:w-[80rem] md:h-[40rem]  backdrop-blur-none p-3 rounded-md overflow-hidden'>
 
  
 

@@ -57,7 +57,8 @@ if(!uuid){
   if (!userID[0].name) {
     redirect('/auth/signup')
   }
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+ 
+
   const productdata = await getProducts({ userid: userID[0].id ,limit:5 }) as any[]
   if (productdata.length === 0) {
     return <NoProduct />

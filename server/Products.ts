@@ -15,6 +15,7 @@ import { promise, z } from 'zod';
 import { getProduct, updateProductdb } from './db/product';
 import { BatchItem } from "drizzle-orm/batch"
 import { error } from 'console';
+import { canCreateProduct } from './permission';
 
 
 
@@ -46,7 +47,14 @@ export async function productDetails(unsafeData: z.infer<typeof ProductDetailSch
     return { success: false, error: "There was an error creating your product" }
   }
 
-
+  // Check if user has permission to create a product (tier limit check)
+  const hasPermission = await canCreateProduct(userid)
+  if (!hasPermission) {
+    return {
+      success: false,
+      error: 'You have reached the maximum number of products for your current plan. Please upgrade to create more products.'
+    }
+  }
 
   const { id } = await createProduct({
     ...data, clerkUserId: userid, url: data.url
@@ -77,6 +85,14 @@ export async function getProducts({ userid, limit }: { userid: string, limit?: n
 
 
 export async function createProduct(data: typeof ProductTable.$inferInsert) {
+
+  const hasPermission = await canCreateProduct(data.clerkUserId)
+  if (!hasPermission) {
+    return {
+      success: false,
+      error: 'You have reached the maximum number of products for your current plan. Please upgrade to create more products.'
+    }
+  }
 
 
 
