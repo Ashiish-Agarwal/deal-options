@@ -7,7 +7,7 @@ import { createProductView } from "@/server/actions/productDetails";
 import { canRemoveBranding, canShowDsicountBanner } from "@/server/permission"; 
 import { createElement } from "react";
 
-
+export const dynamic = 'edge'
 
 export async function GET(
   request: NextRequest,

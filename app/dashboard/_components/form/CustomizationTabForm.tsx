@@ -57,7 +57,7 @@ import Upgrade from "@/components/Upgrade"
 
 const re= removeBranding
 if(!re){
-  return null
+  return <Upgrade>you do not have permission to perform this action</Upgrade>
 }
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof CustomizationTabFormSchema>) {

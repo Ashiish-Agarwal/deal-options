@@ -128,7 +128,7 @@ if(customizationtable==null) return notFound()
     <Card className='w-[90%]  bg-accent/55 border-0 border-zinc-950/10  rounded-xl   h-full  '>
       <CardHeader>
         <CardTitle className='text-2xl'>
-          Banner Customization
+          Banner Customization 
         </CardTitle>
       </CardHeader>
       <CardContent>

@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet'
 import { LogOut, Menu, Settings, User } from 'lucide-react'
 import { authClient, useSession } from '@/lib/auth-client'
 import {
@@ -53,7 +53,7 @@ const InnerNavbaar = () => {
                 <Button variant="ghost" className='relative p-1 hover:bg-gray-100 rounded-full'>
                   <Avatar className='h-9 w-9 ring-2 ring-transparent hover:ring-teal-200 transition-all duration-200'>
                     <AvatarImage 
-                      src={session?.data?.user.image || '/defaultpf.png'} 
+                      src={session?.data?.user.image || '/loaidng.ico'} 
                       alt="User Avatar" 
                     />
                     <AvatarFallback className='bg-gradient-to-br from-teal-400 to-blue-500 text-white font-semibold'>
@@ -69,7 +69,7 @@ const InnerNavbaar = () => {
                   <div className='flex items-center gap-3'>
                     <Avatar className='h-12 w-12 ring-2 ring-white shadow-md'>
                       <AvatarImage 
-                        src={session?.data?.user.image || '/defaultpf.png'} 
+                        src={session?.data?.user.image || '/loaidng.ico'} 
                         alt="User Avatar" 
                       />
                       <AvatarFallback className='bg-gradient-to-br from-teal-400 to-blue-500 text-white font-semibold'>
@@ -133,6 +133,8 @@ const InnerNavbaar = () => {
           <SheetTrigger>
             <Menu className='h-6 w-6 cursor-pointer' />
           </SheetTrigger>
+          <SheetTitle className='sr-only'>Menu</SheetTitle>
+          <SheetDescription className='sr-only'>Menu description</SheetDescription>
           <SheetContent side='right'>
             <div className='flex flex-col gap-4 pt-8 items-center justify-center '>
               

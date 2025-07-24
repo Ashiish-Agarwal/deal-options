@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Script from "next/script";
+import GATracker from "@/components/ga-tracker";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,11 +96,27 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+           
+<Script async src="https://www.googletagmanager.com/gtag/js?id=G-GBVC7Y6J4Z"></Script>
+<Script>{`
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-GBVC7Y6J4Z');
+  `
+  }
+</Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <GATracker />
         {children}
       </body>
+
+
     </html>
   );
 }

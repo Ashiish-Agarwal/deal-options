@@ -9,6 +9,8 @@ import { buttonVariants } from '@/components/ui/button'
 import {
   Sheet,
   SheetContent,
+  SheetDescription,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
 import Top_Baar from '@/components/top-baar'
@@ -102,10 +104,14 @@ const Navbaar = () => {
           variant:'outline',
           className:'w-24 text-lg rounded-md border-2 border-zinc-500/30'
         }))} href={'/landingpage/story'}>story</Link>
-          <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
+
+          <Sheet >
             <SheetTrigger asChild>
               <Menu className='h-6 w-6 cursor-pointer' />
             </SheetTrigger>
+
+            <SheetTitle className='sr-only'>Menu</SheetTitle>
+                      <SheetDescription className='sr-only'>Menu description</SheetDescription>
             <SheetContent side='right'>
               <div className='flex flex-col gap-4 pt-8 items-center justify-center '>
                 
