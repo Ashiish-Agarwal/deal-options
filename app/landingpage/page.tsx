@@ -26,9 +26,9 @@ const page = async () => {
     const session = await  uuidAction()
     
 
-    if(session) {
-        return redirect('/dashboard')
-    }
+    // if(session) {
+    //     return redirect('/dashboard')
+    // }
 
   return (
     <Suspense fallback={<SkeletonCard />}>
@@ -191,7 +191,7 @@ const page = async () => {
       <div className='text-center mt-10 h-full  pb-32 pt-20 border-2 border-white bg-white rounded-md p-5  w-full   '>
       <h1 className='text-8xl dosisFont'>Ready to get started?</h1>
       <p className='text-balance dosisFont text-2xl  text-gray-700 mt-5 text-center '>Sign up for a free trial and start using our Saas today.</p>
-      <Link href={"/pricing"} className={buttonVariants({variant:"teal", className:'mt-10',size:'lg'})}> sign up for free</Link>
+      <Link href={"/auth/signup"} className={buttonVariants({variant:"teal", className:'mt-10',size:'lg'})}> sign up for free</Link>
       </div>
       </section>
     </div>

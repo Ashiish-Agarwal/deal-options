@@ -93,7 +93,7 @@ const PricingPage = () => {
                 </ul>
               </div>
               <Link
-              href={'/login'}
+              href={'/pricing'}
                 
                 aria-describedby={tier.name.toLowerCase()}
                 className={`mt-8 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6  focus-visible:outline-2 focus-visible:outline-offset-2
