@@ -99,7 +99,8 @@ export default function RootLayout({
       <head>
            
 <Script async src="https://www.googletagmanager.com/gtag/js?id=G-GBVC7Y6J4Z"></Script>
-<Script>{`
+<Script id="google-tag-manager" strategy="beforeInteractive">
+  {`
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

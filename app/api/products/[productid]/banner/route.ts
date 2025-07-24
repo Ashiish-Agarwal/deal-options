@@ -1,4 +1,5 @@
 
+
 import { NextRequest, NextResponse } from "next/server";
 import findUserCountry from 'find-user-country';
 import { headers } from "next/headers";
@@ -7,7 +8,6 @@ import { createProductView } from "@/server/actions/productDetails";
 import { canRemoveBranding, canShowDsicountBanner } from "@/server/permission"; 
 import { createElement } from "react";
 
-export const runtime = 'edge'
 
 export async function GET(
   request: NextRequest,
