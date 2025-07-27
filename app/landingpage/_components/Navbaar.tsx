@@ -78,7 +78,7 @@ const Navbaar = () => {
         <Top_Baar/>
         
 
-            <nav className='w-full h-16  gap-2 p-2 flex justify-between items-center '>
+            <nav className='w-screen h-16  gap-2 p-2 flex justify-between items-center overflow-hidden '>
         <Link className='text-2xl tracking-tighter font-serif  hover:text-zinc-700  ' href={'/'}>
          Deal-option <span className='text-teal-500 text-3xl'>
           .
