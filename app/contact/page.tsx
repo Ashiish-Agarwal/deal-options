@@ -1,5 +1,5 @@
 
-import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Twitter } from 'lucide-react';
 
 const ContactSection = () => {
  
@@ -18,8 +18,8 @@ const ContactSection = () => {
             Get In <span className="text-blue-600">Touch</span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Have a question or want to work together? I'd love to hear from you. 
-            Send me a message and I'll respond as soon as possible.
+            Have a question or want to work together? I d love to hear from you. 
+            Send me a message and I ll respond as soon as possible.
           </p>
         </div>
 

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
-import { Play, Volume2, VolumeX, Maximize } from 'lucide-react'
+import { Play, Volume2, Maximize } from 'lucide-react'
 
 const VideoComponent = () => {
   const [showPlayButton, setShowPlayButton] = useState(true)

@@ -127,7 +127,7 @@ function PricingCard({
     <CardFooter className="flex flex-col gap-4 items-start">
         <Feature className="font-bold">
           {maxNumberOfProducts}{" "}
-          {maxNumberOfProducts === 1 ? "product" : "products"}
+          {maxNumberOfProducts === 2 ? "product" : "products"}
         </Feature>
         <Feature>PPP discounts</Feature>
         {canCustomizeBanner && <Feature>Banner customization</Feature>}

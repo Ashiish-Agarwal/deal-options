@@ -56,9 +56,9 @@ import { toast } from "sonner"
       })
 
 const re= removeBranding
-// if(!re){
-//   return <Upgrade>you do not have permission to perform this action</Upgrade>
-// }
+if(!re){
+  return null
+}
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof CustomizationTabFormSchema>) {
    const data = await updateProductCustmizaion({id:customizationtable.productId},values)
