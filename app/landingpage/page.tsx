@@ -17,6 +17,7 @@ import FeaturesOption from './_components/Features-Option'
 import VideoComponent from '@/components/VideoComponent'
 import { Testimonial } from './_components/testimonial'
 import SkeletonCard from '../loading'
+import { TextEffect } from '@/components/motion-primitives/text-effect'
 
 
 
@@ -24,6 +25,8 @@ import SkeletonCard from '../loading'
 const page = async () => {
 
     const session = await  uuidAction()
+
+    const h1= 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-balance mt-3 tracking-wide sm:tracking-wider md:tracking-widest font-semibold leading-tight sm:leading-snug md:leading-normal px-4 sm:px-0'
     
 
     if(session) {
@@ -47,25 +50,135 @@ const page = async () => {
             <h1 className='text-lg lowercase font-semibold tracking-tight text-balance mt-10 googleFont'>Make Profit 🔥</h1>
             </div>
             
-                  <h1 className='text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-balance mt-3 tracking-wide sm:tracking-wider md:tracking-widest font-semibold leading-tight sm:leading-snug md:leading-normal px-4 sm:px-0'>
-  <span className='text-teal-500 dosisFont'>
-    Deal
-  </span>
-  {' '}options make{' '}
-  <br className='hidden sm:block' />
-  <span className='sm:hidden'> </span>
-  more{' '}
-  <span className='text-teal-500 font-bold'>
-    Easier
-  </span>
-  {' '}for{' '}
-  <br className='hidden sm:block' />
-  <span className='sm:hidden'> </span>
-  your Products{' '}
-  <span className='text-teal-500 font-bold'>
-    Profit
-  </span>
-</h1>
+  
+
+
+
+
+
+<div className="space-y-2">
+  <div className='flex gap-2'>
+
+  <TextEffect className={`${h1} text-teal-500 dosisFont`}> Deal</TextEffect>
+  <TextEffect
+    as="h1"
+    className={h1}
+    preset="slide"
+    per="word"
+    delay={0}
+    speedReveal={1.2}
+    variants={{
+      item: {
+        hidden: { opacity: 0, y: 30, filter: 'blur(8px)' },
+        visible: { 
+          opacity: 1, 
+          y: 0, 
+          filter: 'blur(0px)',
+          transition: { duration: 0.5, ease: "easeOut" }
+        },
+        exit: { opacity: 0, y: -30, filter: 'blur(8px)' }
+      }
+    }}
+  >
+   
+       options make
+      
+  </TextEffect>
+    </div>
+  
+  <br className="hidden sm:block" />
+  
+  <div className="flex flex-wrap items-center gap-2">
+    <TextEffect
+      as="span"
+      className={h1}
+      preset="fade-in-blur"
+      per="word"
+      delay={0.8}
+      speedReveal={1.5}
+    >
+      more
+    </TextEffect>
+    
+    <TextEffect
+      as="span"
+      className={`${h1} text-teal-500 font-bold`}
+      preset="scale"
+      per="char"
+      delay={1.2}
+      speedReveal={2}
+      variants={{
+        item: {
+          hidden: { opacity: 0, scale: 0.5, rotateX: -90 },
+          visible: { 
+            opacity: 1, 
+            scale: 1, 
+            rotateX: 0,
+            transition: { duration: 0.6, ease: "backOut" }
+          },
+          exit: { opacity: 0, scale: 0.5, rotateX: 90 }
+        }
+      }}
+    >
+      Easier
+    </TextEffect>
+    
+    <TextEffect
+      as="span"
+      className={h1}
+      preset="fade-in-blur"
+      per="word"
+      delay={1.6}
+      speedReveal={1.5}
+    >
+      for
+    </TextEffect>
+  </div>
+  
+  <br className="hidden sm:block" />
+  
+  <div className="flex flex-wrap items-center gap-2">
+    <TextEffect
+      as="span"
+      className={h1}
+      preset="slide"
+      per="word"
+      delay={2}
+      speedReveal={1.5}
+    >
+      your Products
+    </TextEffect>
+    
+    <TextEffect
+      as="span"
+      className={`${h1} text-teal-500 font-bold`}
+      preset="scale"
+      per="char"
+      delay={2.5}
+      speedReveal={2}
+      variants={{
+        item: {
+          hidden: { opacity: 0, scale: 0, rotate: -180 },
+          visible: { 
+            opacity: 1, 
+            scale: 1, 
+            rotate: 0,
+            transition: { duration: 0.8, ease: "backOut" }
+          },
+          exit: { opacity: 0, scale: 0, rotate: 180 }
+        }
+      }}
+    >
+      Profit
+    </TextEffect>
+  </div>
+</div>
+
+
+
+
+
+
                   
 
                   <h1 className=' text-2xl text-pretty pt-10 space-y-2    '>Optimize your product pricing <br /> 

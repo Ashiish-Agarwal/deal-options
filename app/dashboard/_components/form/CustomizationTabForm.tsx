@@ -24,7 +24,7 @@ import { Switch } from "@/components/ui/switch"
 import { Banner } from "@/components/Banner"
 import { updateProductCustmizaion } from "@/server/actions/productDetails"
 import { toast } from "sonner"
-import Upgrade from "@/components/Upgrade"
+
 
 
 
@@ -56,9 +56,9 @@ import Upgrade from "@/components/Upgrade"
       })
 
 const re= removeBranding
-if(!re){
-  return <Upgrade>you do not have permission to perform this action</Upgrade>
-}
+// if(!re){
+//   return <Upgrade>you do not have permission to perform this action</Upgrade>
+// }
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof CustomizationTabFormSchema>) {
    const data = await updateProductCustmizaion({id:customizationtable.productId},values)
@@ -80,11 +80,11 @@ if(!re){
 
     <Banner message={watchForm.locationMessage} mappings={{coupon:'example',discount:'10%',country:'INDIA'}} canRemoveBranding={canCustomizeBanner} customization={{...watchForm,isSticky:watchForm.isSticky ?? false}}     />
     <p className="text-sm text-muted-foreground mt-5 cursor-no-drop">See how your banner look like </p>
-    <div>
+    {/* <div>
       {canCustomizeBanner ? null : (
         <Upgrade>you do not have permission to perform this action</Upgrade>
       )}
-    </div>
+    </div> */}
     <div className=" mt-5 ">
       <Form {...form} >
         
