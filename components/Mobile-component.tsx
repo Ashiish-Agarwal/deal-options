@@ -185,7 +185,7 @@ const MobileCMP: React.FC = () => {
                         <span className='ml-2'>Samsung</span>
                     </div>
                     <div className='flex items-center space-x-1'>
-                        <span>100%</span>
+                        <span>74%</span>
                         <div className='w-6 h-3 border border-white rounded-sm'>
                             <div className='w-full h-full bg-white rounded-sm'></div>
                         </div>
