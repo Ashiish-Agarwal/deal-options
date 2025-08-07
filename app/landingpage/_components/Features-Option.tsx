@@ -27,7 +27,7 @@ const FeaturesOption = () => {
   ];
   return (
 <>
-   <section className='flex flex-col items-center justify-center gap-8  border-t-2 border-zinc-500/20 border-dotted  p-2 w-full h-full '>
+   <section className='flex flex-col items-center justify-center gap-8  border-t-2 border-zinc-500/20 border-dotted  p-2 w-screen  h-full  '>
 
 
     <div className="text-xl font-semibold tracking-tight text-balance text-center ">
@@ -35,8 +35,8 @@ const FeaturesOption = () => {
 <p className='text-balance dosisFont text-2xl mt-5 text-center'>Turn browsers into buyers—anywhere. Reach the 85% you&apos;re missing with intelligent global pricing    </p>
 
 <div className="w-full max-w-6xl mx-auto px-4 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
-        {steps.map((step, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-8 lg:gap-4">
+        {steps.map((step) => (
           <div key={step.number} className="flex flex-col items-center text-center relative">
             {/* Step Number Circle */}
             <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 relative z-10">
@@ -46,9 +46,9 @@ const FeaturesOption = () => {
             </div>
             
             {/* Connecting Line - Hidden on mobile, visible on larger screens */}
-            {index < steps.length - 1 && (
+            {/* {index < steps.length - 1 && (
               <div className=" sm:block hidden absolute top-6 left-1/2 w-full h-0.5 bg-gray-300 transform translate-x-6 z-0"></div>
-            )}
+            )} */}
             
             {/* Step Description */}
             <div className="max-w-xs">

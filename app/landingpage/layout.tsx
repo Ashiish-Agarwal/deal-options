@@ -9,10 +9,13 @@ const layout = ({children}:{children:React.ReactNode}) => {
     <div>
 
     </div>
-    <div className='w-full h-full bg-sketch-dots '>
+    <div className='w-full h-full bg-sketch-dots   '>
       <Top_Baar/>
       <Navbaar/>
+      <div className='  flex flex-col items-center justify-center h-full w-full mt-10 overflow-hidden'>
+
       {children}
+      </div>
      
       <Footer/>
     </div>

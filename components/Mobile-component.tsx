@@ -128,7 +128,7 @@ const MobileCMP: React.FC = () => {
     const { leftColumn, rightColumn } = distributeIntoColumns();
 
     const ProductCard: React.FC<{ product: Product }> = ({ product }) => (
-        <div className='w-full mb-2 relative group '>
+        <div className='w-full mb-2 relative group  '>
             <div 
                 className='relative overflow-hidden rounded-lg bg-white/20 backdrop-blur-sm shadow-sm border border-white/20'
                 style={{ height: `${product.height}px` }}
@@ -173,9 +173,9 @@ const MobileCMP: React.FC = () => {
     );
 
     return (
-        <div className='flex items-center justify-center min-h-screen  p-4'>
+        <div className='flex items-center justify-center w-[260px]  '>
             {/* Mobile Frame */}
-            <div className='w-full max-w-xs mx-auto bg-white/10 backdrop-blur-md backdrop-saturate-150 rounded-3xl shadow-2xl overflow-hidden border border-white/20' style={{width: '280px'}}>
+            <div className='w-full max-w-xs mx-auto bg-white/10 backdrop-blur-md backdrop-saturate-150 rounded-3xl shadow-2xl overflow-hidden border border-white/20' style={{width: '360px'}}>
                 {/* Status Bar */}
                 <div className='w-full h-6 bg-black text-white flex items-center justify-between px-4 text-xs'>
                     <div className='flex items-center space-x-1'>

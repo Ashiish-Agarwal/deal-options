@@ -37,17 +37,17 @@ const page = async () => {
     <Suspense fallback={<SkeletonCard />}>
       
 
-    <div className='   p-2 '>
-      <section className="min-h-screen font no-scrollbar   container flex items-center justify-center  text-balance flex-col gap-8 ">
+    <div className='   p-2 w-full h-full  flex flex-col gap-10  '>
+      <section className=" h-full font no-scrollbar   container flex   text-center   text-balance flex-col gap-8 w-screen   ">
 
         
-        <div className='w-full h-full   border-0 grid sm:grid-cols-2 grid-cols-1 mt-20 '>
+        <div className='w-screen h-full   border-0 grid grid-cols-1 md:grid-cols-2 mt-10    '>
 
           <div className='w-full  h-full ml-10 p-2 '>
             
             <div className='flex flex-col'>
 
-            <h1 className='text-lg lowercase font-semibold tracking-tight text-balance mt-10 googleFont'>Make Profit 🔥</h1>
+            <h1 className='text-lg lowercase font-semibold tracking-tight  text-start  text-balance mt-10 googleFont'>Make Profit 🔥</h1>
             </div>
             
   
@@ -189,7 +189,7 @@ const page = async () => {
                   <br />
                   <span className=' font-semibold ml-20'>
 
-                   sales and get more <span className='font-semibold'>Sales</span>
+                   sales with parity discount <span className='font-semibold'>Power</span>
                   </span>
                   </h1>
                   
@@ -222,7 +222,7 @@ const page = async () => {
               }} />
               </div> 
               
-  <div className='flex flex-col items-center justify-center -mt-20 '>
+  <div className='w-full  mx-auto  flex flex-col items-center justify-center -mt-20 pt-5   '>
 
             <MobileCMP/>
             
@@ -239,7 +239,9 @@ const page = async () => {
            
 
         </section>
-      <section className='flex items-center justify-center flex-col gap-10  '>
+
+
+      <section className='flex items-center justify-center flex-col gap-10  h-full w-full overflow-hidden  '>
         <FeaturesOption/>
         <div className='w-full h-full grid sm:grid-cols-3 grid-cols-1 gap-5 ml-5  '>
 
