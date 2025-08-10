@@ -15,7 +15,7 @@ const VideoComponent = () => {
   }
 
   return (
-    <div className='w-full max-w-7xl mx-auto p-2 sm:p-4 pb-6 sm:pb-10'>
+    <div className='w-full max-w-7xl mx-auto p-2 sm:p-4 sm:pb-10 pb-6 '>
       {/* Video Title */}
       <div className='text-center mb-4 sm:mb-6'>
         <h3 className='text-lg sm:text-xl font-semibold text-gray-800 mb-2'>
