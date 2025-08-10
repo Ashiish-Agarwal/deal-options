@@ -94,7 +94,7 @@ const VideoComponent = () => {
           <iframe 
             width="100%" 
             height="100%"
-            {/*src="https://www.youtube.com/embed/RB8_aFLXJmw?si=g8olqshjBl2-uBw5&rel=0&modestbranding=1&showinfo=0" */}
+            
           src="https://www.youtube.com/embed/TYku_AfH1aE?si=Rr81GYDtpQVeB535" 
             title="Product Demo - Smart Pricing Platform" 
             frameBorder="0" 
